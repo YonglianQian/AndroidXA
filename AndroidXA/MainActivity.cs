@@ -16,17 +16,18 @@ namespace AndroidXA
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            base.OnCreate(savedInstanceState);
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+
             AppCenter.Start("474cb7fe-4c47-4dc2-b4f8-854f0eebe0d9", typeof(Analytics), typeof(Crashes));
             AppCenter.LogLevel = LogLevel.Verbose;
-
 
             SimpleDateFormat sdf = new SimpleDateFormat();
             sdf.ApplyPattern("yyyy-MM-dd HH:mm:ss a");
             Date date = new Date();
             Analytics.TrackEvent("Android Xamarin App started, at " + sdf.Format(date));
-
-            base.OnCreate(savedInstanceState);
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            
+            
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
         }
