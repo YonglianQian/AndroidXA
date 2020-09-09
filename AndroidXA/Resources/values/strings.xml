@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">AndroidXA</string>
     <string name="action_settings">Settings</string>
-  <string name="welcome_message">Hello, Abraham. version1</string>
+  <string name="welcome_message">Hello, Abraham. version2</string>
 </resources>

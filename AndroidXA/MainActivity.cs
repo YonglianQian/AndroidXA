@@ -6,6 +6,8 @@ using Android.Widget;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using Java.Util;
+using Android.Icu.Text;
 
 namespace AndroidXA
 {
@@ -15,6 +17,13 @@ namespace AndroidXA
         protected override void OnCreate(Bundle savedInstanceState)
         {
             AppCenter.Start("474cb7fe-4c47-4dc2-b4f8-854f0eebe0d9", typeof(Analytics), typeof(Crashes));
+            AppCenter.LogLevel = LogLevel.Verbose;
+
+
+            SimpleDateFormat sdf = new SimpleDateFormat();
+            sdf.ApplyPattern("yyyy-MM-dd HH:mm:ss a");
+            Date date = new Date();
+            Analytics.TrackEvent("Android Xamarin App started, at " + sdf.Format(date));
 
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
