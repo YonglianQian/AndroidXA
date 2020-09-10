@@ -19,16 +19,13 @@ namespace AndroidXA
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            SetContentView(Resource.Layout.activity_main);
 
-
-            //add an attachment.
             Crashes.GetErrorAttachments = (ErrorReport report) =>
             {
-                // Your code goes here.
                 return new ErrorAttachmentLog[]
                 {
-        ErrorAttachmentLog.AttachmentWithText("Hello world!", "hello.txt"),
-        //ErrorAttachmentLog.AttachmentWithBinary(Encoding.UTF8.GetBytes("Fake image"), "fake_image.jpeg", "image/jpeg")
+            ErrorAttachmentLog.AttachmentWithText("Hello world!", "hello.txt"),
                 };
             };
 
@@ -62,7 +59,7 @@ namespace AndroidXA
 
 
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.activity_main);
+            
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
