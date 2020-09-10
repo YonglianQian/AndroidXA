@@ -8,6 +8,7 @@ using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Java.Util;
 using Android.Icu.Text;
+using System.Text;
 
 namespace AndroidXA
 {
@@ -19,6 +20,19 @@ namespace AndroidXA
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
+
+            //add an attachment.
+            Crashes.GetErrorAttachments = (ErrorReport report) =>
+            {
+                // Your code goes here.
+                return new ErrorAttachmentLog[]
+                {
+        ErrorAttachmentLog.AttachmentWithText("Hello world!", "hello.txt"),
+        //ErrorAttachmentLog.AttachmentWithBinary(Encoding.UTF8.GetBytes("Fake image"), "fake_image.jpeg", "image/jpeg")
+                };
+            };
+
+
             AppCenter.Start("474cb7fe-4c47-4dc2-b4f8-854f0eebe0d9", typeof(Analytics), typeof(Crashes));
             AppCenter.LogLevel = LogLevel.Verbose;
 
@@ -26,8 +40,11 @@ namespace AndroidXA
             sdf.ApplyPattern("yyyy-MM-dd HH:mm:ss a");
             Date date = new Date();
             Analytics.TrackEvent("Android Xamarin App started, at " + sdf.Format(date));
-            
-            
+
+
+            Crashes.GenerateTestCrash();
+
+
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
         }
