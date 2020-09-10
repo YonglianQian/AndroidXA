@@ -36,13 +36,29 @@ namespace AndroidXA
             AppCenter.Start("474cb7fe-4c47-4dc2-b4f8-854f0eebe0d9", typeof(Analytics), typeof(Crashes));
             AppCenter.LogLevel = LogLevel.Verbose;
 
-            SimpleDateFormat sdf = new SimpleDateFormat();
-            sdf.ApplyPattern("yyyy-MM-dd HH:mm:ss a");
-            Date date = new Date();
-            Analytics.TrackEvent("Android Xamarin App started, at " + sdf.Format(date));
+            
 
+            Button translateButton = FindViewById<Button>(Resource.Id.TranslateButton);
+            translateButton.Click += (sender, e) =>
+            {
+                // Translate user's alphanumeric phone number to numeric
+                //string translatedNumber = Core.PhonewordTranslator.ToNumber(phoneNumberText.Text);
+                //if (string.IsNullOrWhiteSpace(translatedNumber))
+                //{
+                //    translatedPhoneWord.Text = string.Empty;
+                //}
+                //else
+                //{
+                //    translatedPhoneWord.Text = translatedNumber;
+                //}
 
-            Crashes.GenerateTestCrash();
+                SimpleDateFormat sdf = new SimpleDateFormat();
+                sdf.ApplyPattern("yyyy-MM-dd HH:mm:ss a");
+                Date date = new Date();
+                Analytics.TrackEvent("Button is clicked, at " + sdf.Format(date));
+
+                Crashes.GenerateTestCrash();
+            };
 
 
             // Set our view from the "main" layout resource
