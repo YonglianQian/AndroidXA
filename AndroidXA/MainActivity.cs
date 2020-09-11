@@ -10,6 +10,7 @@ using Java.Util;
 using Android.Icu.Text;
 using System.Text;
 using System.IO;
+using System;
 
 namespace AndroidXA
 {
@@ -22,26 +23,27 @@ namespace AndroidXA
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
             
-
+            
+            
             Crashes.GetErrorAttachments = (ErrorReport report) =>
             {
+
                 SimpleDateFormat sdf = new SimpleDateFormat();
                 sdf.ApplyPattern("yyyy-MM-dd HH:mm:ss a");
                 Date date = new Date();
-                string result = sdf.Format(date);
+
+                Stream stream = Assets.Open("a.png");
+                MemoryStream ms = new MemoryStream();
+                stream.CopyTo(ms);
+                byte[] data = ms.ToArray();
+
                 return new ErrorAttachmentLog[]
                 {
-
-                    ErrorAttachmentLog.AttachmentWithText("Hello world! \r\n at"+result, "hello.txt"),
-                    ErrorAttachmentLog.AttachmentWithBinary(File.ReadAllBytes("Resources/drawable/a.png"),"a.png","image/png")
-                };
+                    ErrorAttachmentLog.AttachmentWithText("Hello world! \r\n at "+sdf.Format(date), "hello.txt"),
+                    ErrorAttachmentLog.AttachmentWithBinary(data,"a.png","image/png")
+            };
             };
 
-
-            Crashes.SendingErrorReport += (sender, e) =>
-            {
-
-            };
 
             AppCenter.Start("474cb7fe-4c47-4dc2-b4f8-854f0eebe0d9", typeof(Analytics), typeof(Crashes));
             AppCenter.LogLevel = LogLevel.Verbose;
