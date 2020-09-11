@@ -9,6 +9,7 @@ using Microsoft.AppCenter.Crashes;
 using Java.Util;
 using Android.Icu.Text;
 using System.Text;
+using System.IO;
 
 namespace AndroidXA
 {
@@ -27,21 +28,19 @@ namespace AndroidXA
                 SimpleDateFormat sdf = new SimpleDateFormat();
                 sdf.ApplyPattern("yyyy-MM-dd HH:mm:ss a");
                 Date date = new Date();
-                Analytics.TrackEvent("GetErrorAttachments is triggered, at " + sdf.Format(date));
-
+                string result = sdf.Format(date);
                 return new ErrorAttachmentLog[]
                 {
-                    ErrorAttachmentLog.AttachmentWithText("Hello world!", "hello.txt"),
+
+                    ErrorAttachmentLog.AttachmentWithText("Hello world! \r\n at"+result, "hello.txt"),
+                    ErrorAttachmentLog.AttachmentWithBinary(File.ReadAllBytes("Resources/drawable/2.png"),"2.png","image/png")
                 };
             };
 
 
             Crashes.SendingErrorReport += (sender, e) =>
             {
-                SimpleDateFormat sdf = new SimpleDateFormat();
-                sdf.ApplyPattern("yyyy-MM-dd HH:mm:ss a");
-                Date date = new Date();
-                Analytics.TrackEvent("SendingErrorReport is triggered, at " + sdf.Format(date));
+
             };
 
             AppCenter.Start("474cb7fe-4c47-4dc2-b4f8-854f0eebe0d9", typeof(Analytics), typeof(Crashes));
