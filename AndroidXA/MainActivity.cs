@@ -21,8 +21,8 @@ namespace AndroidXA
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
-
             
+
             Crashes.GetErrorAttachments = (ErrorReport report) =>
             {
                 SimpleDateFormat sdf = new SimpleDateFormat();
@@ -33,7 +33,7 @@ namespace AndroidXA
                 {
 
                     ErrorAttachmentLog.AttachmentWithText("Hello world! \r\n at"+result, "hello.txt"),
-                    ErrorAttachmentLog.AttachmentWithBinary(File.ReadAllBytes("Resources/drawable/2.png"),"2.png","image/png")
+                    ErrorAttachmentLog.AttachmentWithBinary(File.ReadAllBytes("Resources/drawable/a.png"),"a.png","image/png")
                 };
             };
 
