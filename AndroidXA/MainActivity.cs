@@ -21,14 +21,28 @@ namespace AndroidXA
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
+            
             Crashes.GetErrorAttachments = (ErrorReport report) =>
             {
+                SimpleDateFormat sdf = new SimpleDateFormat();
+                sdf.ApplyPattern("yyyy-MM-dd HH:mm:ss a");
+                Date date = new Date();
+                Analytics.TrackEvent("GetErrorAttachments is triggered, at " + sdf.Format(date));
+
                 return new ErrorAttachmentLog[]
                 {
-            ErrorAttachmentLog.AttachmentWithText("Hello world!", "hello.txt"),
+                    ErrorAttachmentLog.AttachmentWithText("Hello world!", "hello.txt"),
                 };
             };
 
+
+            Crashes.SendingErrorReport += (sender, e) =>
+            {
+                SimpleDateFormat sdf = new SimpleDateFormat();
+                sdf.ApplyPattern("yyyy-MM-dd HH:mm:ss a");
+                Date date = new Date();
+                Analytics.TrackEvent("SendingErrorReport is triggered, at " + sdf.Format(date));
+            };
 
             AppCenter.Start("474cb7fe-4c47-4dc2-b4f8-854f0eebe0d9", typeof(Analytics), typeof(Crashes));
             AppCenter.LogLevel = LogLevel.Verbose;
