@@ -32,15 +32,15 @@ namespace AndroidXA
                 sdf.ApplyPattern("yyyy-MM-dd HH:mm:ss a");
                 Date date = new Date();
 
-                Stream stream = Assets.Open("a.png");
-                MemoryStream ms = new MemoryStream();
-                stream.CopyTo(ms);
-                byte[] data = ms.ToArray();
+                //Stream stream = Assets.Open("a.png");
+                //MemoryStream ms = new MemoryStream();
+                //stream.CopyTo(ms);
+                //byte[] data = ms.ToArray();
 
                 return new ErrorAttachmentLog[]
                 {
                     ErrorAttachmentLog.AttachmentWithText("Hello world! \r\n at "+sdf.Format(date), "hello.txt"),
-                    ErrorAttachmentLog.AttachmentWithBinary(data,"a.png","image/png")
+                    //ErrorAttachmentLog.AttachmentWithBinary(data,"a.png","image/png")
             };
             };
 
