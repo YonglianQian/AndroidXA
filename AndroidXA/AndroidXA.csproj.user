@@ -4,5 +4,6 @@
     <SelectedDevice>Xiaomi MI NOTE LTE</SelectedDevice>
     <AndroidDesignerPreferredTheme>AppTheme</AndroidDesignerPreferredTheme>
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
+    <DefaultDevice>Pixel_2_API_28</DefaultDevice>
   </PropertyGroup>
 </Project>

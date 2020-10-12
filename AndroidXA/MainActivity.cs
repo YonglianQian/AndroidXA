@@ -23,8 +23,6 @@ namespace AndroidXA
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
             
-            
-            
             Crashes.GetErrorAttachments = (ErrorReport report) =>
             {
 
@@ -69,7 +67,7 @@ namespace AndroidXA
                 Date date = new Date();
                 Analytics.TrackEvent("Button is clicked, at " + sdf.Format(date));
 
-                Crashes.GenerateTestCrash();
+               // Crashes.GenerateTestCrash();
             };
 
 
