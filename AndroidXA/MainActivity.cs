@@ -65,7 +65,7 @@ namespace AndroidXA
                 SimpleDateFormat sdf = new SimpleDateFormat();
                 sdf.ApplyPattern("yyyy-MM-dd HH:mm:ss a");
                 Date date = new Date();
-                Analytics.TrackEvent("Button is clicked, at " + sdf.Format(date));
+                Analytics.TrackEvent("Hi, Button is clicked , at " + sdf.Format(date));
 
                // Crashes.GenerateTestCrash();
             };
