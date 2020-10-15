@@ -57,7 +57,7 @@
     <AndroidUseApkSigner>True</AndroidUseApkSigner>
     <AndroidApkSignerAdditionalArguments>--v2-signing-enabled true</AndroidApkSignerAdditionalArguments>
     <AndroidKeyStore>true</AndroidKeyStore>
-    <AndroidSigningKeyStore>D:\my-release-key.jks</AndroidSigningKeyStore>
+    <AndroidSigningKeyStore>my-release-key.jks</AndroidSigningKeyStore>
     <AndroidSigningStorePass>123456</AndroidSigningStorePass>
     <AndroidSigningKeyAlias>abrahamqian</AndroidSigningKeyAlias>
     <AndroidSigningKeyPass>123456</AndroidSigningKeyPass>
@@ -76,6 +76,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="my-release-key.jks" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
