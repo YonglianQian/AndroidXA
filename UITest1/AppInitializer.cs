@@ -11,7 +11,10 @@ namespace UITest1
             if (platform == Platform.Android)
             {
                 return ConfigureApp.Android
-                    .InstalledApp("com.companyname.androidxa")
+                    //在本地执行，需要有下面的两个方法
+                    //.InstalledApp("com.companyname.androidxa")
+                    //注意目录
+                    //.ApkFile("‪../../../../com.companyname.androidxa.apk")
                     .StartApp();
             }
 

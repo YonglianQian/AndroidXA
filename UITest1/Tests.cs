@@ -8,7 +8,7 @@ using Xamarin.UITest.Queries;
 namespace UITest1
 {
     [TestFixture(Platform.Android)]
-    //[TestFixture(Platform.iOS)]
+    [TestFixture(Platform.iOS)]
     public class Tests
     {
         IApp app;
@@ -30,8 +30,9 @@ namespace UITest1
         {
             AppResult[] results = app.WaitForElement(c => c.Marked("TranslateButton"));
             app.Screenshot("Welcome screen.");
-
             Assert.IsTrue(results.Any());
+
+            //Assert.IsTrue(true);
         }
     }
 }
