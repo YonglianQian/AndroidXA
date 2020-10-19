@@ -1,6 +1,7 @@
 echo "....find variables to match /Users/runner/library/Android/sdk"
 echo $ANDROID_HOME
 ls $ANDROID_HOME
+ls $ANDROID_HOME/build-tools/
 
 echo ".......verify the Release build Apk file........."
 /Users/runner/Library/Android/sdk/build-tools/29.0.2/apksigner verify --verbose --print-certs $APPCENTER_OUTPUT_DIRECTORY/com.companyname.androidxa.apk
