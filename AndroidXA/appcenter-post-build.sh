@@ -16,8 +16,8 @@ echo "2. remove original apk........"
 rm com.companyname.androidxa.apk
 echo "3.-------signing........."
 /Users/runner/Library/Android/sdk/build-tools/29.0.2/apksigner sign --ks /Users/runner/work/1/s/AndroidXA/my-release-key.jks --ks-pass pass:"123456" --out com.companyname.androidxa.apk my-app-unsigned-aligned.apk
-echo "-----ls"
-pwd
+echo "4.5 -----ls"
+rm my-app-unsigned-aligned.apk
 ls
 echo "4. completed, verify it"
 /Users/runner/Library/Android/sdk/build-tools/29.0.2/apksigner verify --verbose --print-certs com.companyname.androidxa.apk
