@@ -1,6 +1,3 @@
-echo "..........."
-ls $APPCENTER_SOURCE_DIRECTORY
-
 echo ".......verify the Release build Apk file........."
 $ANDROID_HOME/build-tools/29.0.2/apksigner verify --verbose --print-certs $APPCENTER_OUTPUT_DIRECTORY/com.companyname.androidxa.apk
 echo "------Start signing-----------"
@@ -10,7 +7,7 @@ $ANDROID_HOME/build-tools/29.0.2/zipalign -v -p 4 com.companyname.androidxa.apk 
 echo "2.-------remove original apk------"
 rm com.companyname.androidxa.apk
 echo "3.-------signing-------"
-$ANDROID_HOME/build-tools/29.0.2/apksigner sign --ks $APPCENTER_SOURCE_DIRECTORY/my-release-key.jks --ks-pass pass:"123456" --out com.companyname.androidxa.apk my-app-unsigned-aligned.apk
+$ANDROID_HOME/build-tools/29.0.2/apksigner sign --ks $APPCENTER_SOURCE_DIRECTORY/AndroidXA/my-release-key.jks --ks-pass pass:"123456" --out com.companyname.androidxa.apk my-app-unsigned-aligned.apk
 echo "4.-----remove cached file------"
 rm my-app-unsigned-aligned.apk
 echo "5.----completed, verify it----"
