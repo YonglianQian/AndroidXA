@@ -1,3 +1,6 @@
+echo "..........."
+ls $APPCENTER_SOURCE_DIRECTORY
+
 echo ".......verify the Release build Apk file........."
 $ANDROID_HOME/build-tools/29.0.2/apksigner verify --verbose --print-certs $APPCENTER_OUTPUT_DIRECTORY/com.companyname.androidxa.apk
 echo "------Start signing-----------"
