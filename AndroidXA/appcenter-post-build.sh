@@ -1,3 +1,15 @@
+echo "-----test1---"
+##echo "zhushi"
+echo "-----key1----"
+echo $key1
+echo "----key2-----"
+echo $key2
+echo "........."
+echo $APPCENTER_KEYSTORE_PASSWORD
+echo $APPCENTER_KEY_ALIAS
+echo $APPCENTER_KEY_PASSWORD
+
+
 #echo ".......verify the Release build Apk file........."
 #$ANDROID_HOME/build-tools/29.0.2/apksigner verify --verbose --print-certs $APPCENTER_OUTPUT_DIRECTORY/com.companyname.androidxa.apk
 #echo "------Start signing-----------"
