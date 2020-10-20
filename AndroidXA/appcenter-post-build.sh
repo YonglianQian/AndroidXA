@@ -1,22 +1,3 @@
-echo "-----------Test-----pwd--ls--"
-pwd
-ls
-
-echo "---APPCENTER_SOURCE-DIRECTORY-- ls"
-echo $APPCENTER_SOURCE_DIRECTORY
-ls $APPCENTER_SOURCE_DIRECTORY
-
-echo "----APPCENTER_OUTPUT_DIRECTOYR---ls"
-echo $APPCENTER_OUTPUT_DIRECTORY
-ls $APPCENTER_OUTPUT_DIRECTORY
-
-echo "------test-----"
-ls /Users/runner/work/1/s/
-echo "-----test1---"
-echo $APPCENTER_KEYSTORE_PASSWORD
-echo $APPCENTER_KEY_ALIAS
-echo $APPCENTER_KEY_PASSWORD
-
 #echo ".......verify the Release build Apk file........."
 #$ANDROID_HOME/build-tools/29.0.2/apksigner verify --verbose --print-certs $APPCENTER_OUTPUT_DIRECTORY/com.companyname.androidxa.apk
 #echo "------Start signing-----------"
