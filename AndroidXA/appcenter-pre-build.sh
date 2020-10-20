@@ -1,6 +1,7 @@
 echo "-----Android SDK---"
 ls $Android_Home
-ls $Android_home/build-tools/
+echo "------Android SDK----"
+ls $ANDROID_HOME/build-tools/
 echo "-----node----"
 node --version
 npm --version
