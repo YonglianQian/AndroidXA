@@ -12,9 +12,10 @@ namespace UITest1
             {
                 return ConfigureApp.Android
                     //在本地执行，需要有下面的两个方法
+                    
                     //.InstalledApp("com.companyname.androidxa")
-                    //注意目录
-                    //.ApkFile("‪../../../../com.companyname.androidxa.apk")
+                    //or
+                    //.ApkFile("C:/com.companyname.androidxa.apk")
                     .StartApp();
             }
 
