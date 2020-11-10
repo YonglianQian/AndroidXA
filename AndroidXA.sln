@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidXA", "AndroidXA\AndroidXA.csproj", "{63270F90-D999-4A9C-96CA-ED06908D32E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestProject1", "NUnitTestProject1\NUnitTestProject1.csproj", "{1D61FAA7-B8F8-4092-88F4-210449E0527A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestProject1", "NUnitTestProject1\NUnitTestProject1.csproj", "{4DA538E4-0E11-4EAC-9547-7D234C3665D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,10 @@ Global
 		{63270F90-D999-4A9C-96CA-ED06908D32E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63270F90-D999-4A9C-96CA-ED06908D32E1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{63270F90-D999-4A9C-96CA-ED06908D32E1}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{1D61FAA7-B8F8-4092-88F4-210449E0527A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D61FAA7-B8F8-4092-88F4-210449E0527A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D61FAA7-B8F8-4092-88F4-210449E0527A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D61FAA7-B8F8-4092-88F4-210449E0527A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DA538E4-0E11-4EAC-9547-7D234C3665D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DA538E4-0E11-4EAC-9547-7D234C3665D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DA538E4-0E11-4EAC-9547-7D234C3665D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DA538E4-0E11-4EAC-9547-7D234C3665D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
