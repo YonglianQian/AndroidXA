@@ -72,7 +72,18 @@ namespace AndroidXA
 
 
             // Set our view from the "main" layout resource
+
+            //var nunit = new NUnit.Runner.App();
             
+            // If you want to add tests in another assembly
+            //nunit.AddTestAssembly(typeof(MyTests).Assembly);
+
+            // Do you want to automatically run tests when the app starts?
+            //nunit.Options = new TestOptions
+            //{
+            //    AutoRun = true
+            //};
+            //LoadApplication(nunit);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
