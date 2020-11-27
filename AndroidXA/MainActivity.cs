@@ -22,31 +22,24 @@ namespace AndroidXA
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
-            
+
+            SimpleDateFormat sdf = new SimpleDateFormat();
+            sdf.ApplyPattern("yyyy-MM-dd HH:mm:ss a");
+            Date date = new Date();
+
             Crashes.GetErrorAttachments = (ErrorReport report) =>
             {
-
-                SimpleDateFormat sdf = new SimpleDateFormat();
-                sdf.ApplyPattern("yyyy-MM-dd HH:mm:ss a");
-                Date date = new Date();
-
-                //Stream stream = Assets.Open("a.png");
-                //MemoryStream ms = new MemoryStream();
-                //stream.CopyTo(ms);
-                //byte[] data = ms.ToArray();
-
                 return new ErrorAttachmentLog[]
                 {
-                    ErrorAttachmentLog.AttachmentWithText("Hello world! \r\n at "+sdf.Format(date), "hello.txt"),
+                    ErrorAttachmentLog.AttachmentWithText("Crash happened: Hello world! \r\n at "+sdf.Format(date), "hello.txt"),
                     //ErrorAttachmentLog.AttachmentWithBinary(data,"a.png","image/png")
             };
             };
-
-
             AppCenter.Start("474cb7fe-4c47-4dc2-b4f8-854f0eebe0d9", typeof(Analytics), typeof(Crashes));
             AppCenter.LogLevel = LogLevel.Verbose;
 
-            
+
+            Analytics.TrackEvent("Loading Main activity... , at " + sdf.Format(date));
 
             Button translateButton = FindViewById<Button>(Resource.Id.TranslateButton);
             translateButton.Click += (sender, e) =>
@@ -62,12 +55,8 @@ namespace AndroidXA
                 //    translatedPhoneWord.Text = translatedNumber;
                 //}
 
-                SimpleDateFormat sdf = new SimpleDateFormat();
-                sdf.ApplyPattern("yyyy-MM-dd HH:mm:ss a");
-                Date date = new Date();
-                Analytics.TrackEvent("Hi, Button is clicked , at " + sdf.Format(date));
-
-               // Crashes.GenerateTestCrash();
+                Analytics.TrackEvent("Second event: Button is clicked , at " + sdf.Format(date));
+                Crashes.GenerateTestCrash();
             };
 
             
