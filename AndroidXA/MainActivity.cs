@@ -65,8 +65,9 @@ namespace AndroidXA
                 //{
                 //    translatedPhoneWord.Text = translatedNumber;
                 //}
+                var result = FromRainbow(Rainbow.Blue);
+                Analytics.TrackEvent($"{sdf.Format(date)} : {result.A}");
 
-                Analytics.TrackEvent("Second event: Button is clicked , at " + sdf.Format(date));
                 Crashes.GenerateTestCrash();
             };
 
