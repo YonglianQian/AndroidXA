@@ -67,8 +67,7 @@ namespace AndroidXA
                 //}
                 var result = FromRainbow(Rainbow.Blue);
                 Analytics.TrackEvent($"{sdf.Format(date)} : {result.A}");
-
-                Crashes.GenerateTestCrash();
+                //Crashes.GenerateTestCrash();
             };
 
             
