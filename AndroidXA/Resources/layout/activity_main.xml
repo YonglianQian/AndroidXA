@@ -9,9 +9,10 @@
      android:layout_height="match_parent" android:text="@string/welcome_message"/>
     <Button
         android:text="@string/button_name"
-        android:layout_width="270.5dp"
+        android:layout_width="285.5dp"
         android:layout_height="wrap_content"
+        android:layout_margin="64px"
         android:id="@+id/TranslateButton"
-        android:layout_margin="64px" />
+        android:textAllCaps="false"/>
     
 </RelativeLayout>
