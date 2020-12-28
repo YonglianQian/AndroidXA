@@ -10,7 +10,13 @@
         android:text="@string/welcome_message"
         android:padding="5px"
         android:id="@+id/mytextview"/>
-    <Button
+   
+   <!--关于Relative layout, 参看这个这个链接。
+    https://developer.android.com/guide/topics/ui/layout/relative
+    非常棒！未来可期！
+    -->
+
+        <Button
         android:text="@string/button_name"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
