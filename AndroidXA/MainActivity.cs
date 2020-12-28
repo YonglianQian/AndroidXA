@@ -24,6 +24,33 @@ namespace AndroidXA
         Indigo,
         Violet
     }
+    public class RGBColor
+    {
+        public int A { get; set; } = 0;
+        public int B { get; set; } = 1;
+        public int C { get; set; } = 2;
+
+        public RGBColor(int a, int b, int c)
+        {
+            A = a;
+            B = b;
+            C = c;
+
+            Console.WriteLine(a + b + c);
+        }
+
+    }
+    public record Person
+    {
+        public string LastName { get; }
+        public string FirstName { get; }
+
+        public Person(string first, string last) => (FirstName, LastName) = (first, last);
+        public override string ToString()
+        {
+            return $"My Name is {FirstName} {LastName}";
+        }
+    }
 
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
@@ -65,16 +92,18 @@ namespace AndroidXA
                 //{
                 //    translatedPhoneWord.Text = translatedNumber;
                 //}
-                var result = FromRainbow(Rainbow.Blue);
-                Analytics.TrackEvent($"{sdf.Format(date)} : {result.C}");
+                var result = FromRainbow(Rainbow.Indigo);
+                Person p = new Person("Abraham", "Qian");
+                Analytics.TrackEvent($"Hello, {p.ToString()}, Now is: {sdf.Format(date)}. Result is: {result.C}");
                 //Crashes.GenerateTestCrash();
+                translateButton.Text = "Hello, now is version 21, BigSur";
             };
 
-            
+
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
-            
+
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
@@ -91,20 +120,8 @@ namespace AndroidXA
         Rainbow.Violet => new RGBColor(0x94, 0x00, 0xD3),
         _ => throw new ArgumentException(message: "invalid enum value", paramName: nameof(colorBand)),
     };
-    }
-    public class RGBColor
-    {
-        public int A { get; set; } = 0;
-        public int B { get; set; } = 1;
-        public int C { get; set; } = 2;
 
-        public RGBColor(int a,int b,int c)
-        {
-            A = a;
-            B = b;
-            C = c;
 
-            Console.WriteLine(a+b+c);
-        }
     }
+    
 }

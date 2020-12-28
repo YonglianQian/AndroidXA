@@ -4,14 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<TextView
-     android:layout_width="match_parent"
-     android:layout_height="match_parent" android:text="@string/welcome_message"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/welcome_message"
+        android:padding="5px"
+        android:id="@+id/mytextview"/>
     <Button
         android:text="@string/button_name"
-        android:layout_width="270.5dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:id="@+id/TranslateButton"
-        android:layout_margin="64px" />
+        android:layout_below="@id/mytextview"
+        android:layout_centerHorizontal="true"
+        />
     
 </RelativeLayout>
