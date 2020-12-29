@@ -8,7 +8,13 @@ node --version
 npm --version
 echo "----JDK-----"
 java -version
-
+echo "-----------"
+echo "-----msbuild----"
+where msbuild
+msbuild --version
+echo "------csc-------"
+where csc
+csc --version
 
 
 
