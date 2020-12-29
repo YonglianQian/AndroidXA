@@ -23,6 +23,7 @@
         android:id="@+id/TranslateButton"
         android:layout_below="@id/mytextview"
         android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
         />
     
 </RelativeLayout>

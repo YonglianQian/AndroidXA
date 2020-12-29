@@ -40,6 +40,9 @@ namespace AndroidXA
         }
 
     }
+    /// <summary>
+    /// C#5 feature
+    /// </summary>
     public record Person
     {
         public string LastName { get; }
@@ -96,7 +99,7 @@ namespace AndroidXA
                 Person p = new Person("Abraham", "Qian");
                 Analytics.TrackEvent($"Hello, {p.ToString()}, Now is: {sdf.Format(date)}. Result is: {result.C}");
                 //Crashes.GenerateTestCrash();
-                translateButton.Text = "Hello, now is version 21, BigSur";
+                translateButton.Text = $"{p.ToString()},{result.C}";
             };
 
 
