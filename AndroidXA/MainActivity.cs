@@ -41,7 +41,7 @@ namespace AndroidXA
 
     }
     /// <summary>
-    /// C#5 feature
+    /// C#9 feature
     /// </summary>
     public record Person
     {
@@ -96,10 +96,10 @@ namespace AndroidXA
                 //    translatedPhoneWord.Text = translatedNumber;
                 //}
                 var result = FromRainbow(Rainbow.Indigo);
-                Person p = new Person("Abraham", "Qian");
-                Analytics.TrackEvent($"Hello, {p.ToString()}, Now is: {sdf.Format(date)}. Result is: {result.C}");
+                //Person p = new Person("Abraham", "Qian");
+                Analytics.TrackEvent($"Now is: {sdf.Format(date)}. Result is: {result.C}");
                 //Crashes.GenerateTestCrash();
-                translateButton.Text = $"{p.ToString()},{result.C}";
+                translateButton.Text = $"{result.C}";
             };
 
 
