@@ -1,3 +1,3 @@
-Android App(Xamarin)
-Windows
+Android
 Xamarin.Android
+Windows
